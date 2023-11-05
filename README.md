@@ -1,3 +1,3 @@
 # generate-readme-for-repos
 
-[Action_Name.yml](Action_Name.yml)
+[Generate_Readme_For_Repos.yml](Generate_Readme_For_Repos.yml)

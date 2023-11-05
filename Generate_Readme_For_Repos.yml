@@ -1,4 +1,4 @@
-name: Template_Name
+name: Generate_Readme_For_Repos
 
 permissions:
   contents: write
@@ -6,16 +6,19 @@ permissions:
 
 on: 
   workflow_dispatch:
-  schedule:
-    - cron: '35 16 * * *'
+    inputs:
+      label: 
+        description: 'Label'
+        required: true
+        type: string
 
 jobs:
-  template_name:
+  generate_readme_for_repos:
     runs-on: ubuntu-latest
     steps:
       - name: generate-readme-for-repos
         uses: gendloop/generate-readme-for-repos@main
         with: 
-          token: ${{ secrets.GENDLOOP_ACCESS_TOKEN }}
+          label: ${{ inputs.label }}
 
       
