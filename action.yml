@@ -29,7 +29,13 @@ runs:
         echo "reponame=$repo_name" >> "$GITHUB_OUTPUT"
 
     - name: generate-readme-for-repos
-      shell: bash
+      shell: pwsh
       working-directory: ${{ github.workspace }}
       run: |
-        ./${{ github.action_path }}/scripts/generate_readme_for_repos.ps1 ${{ inputs.file_in }} ${{ inputs.file_out }} ${{ inputs.label }} ${{ steps.get-repo-name.outputs.reponame }} ${{ github.repository_owner }}
+        ${{ github.action_path }}/scripts/generate_readme_for_repos.ps1 ${{ inputs.file_in }} ${{ inputs.file_out }} ${{ inputs.label }} ${{ steps.get-repo-name.outputs.reponame }} ${{ github.repository_owner }}
+
+    - name: git-push
+      uses: gendloop/git-push@v1.0.0
+      with:
+        token: ${{ github.token }}
+        commit: "chore: generate ${{ inputs.file_out }} for ${{ inputs.file_in }} "
