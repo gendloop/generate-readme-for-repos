@@ -1,0 +1,21 @@
+name: Template_Name
+
+permissions:
+  contents: write
+  actions: write
+
+on: 
+  workflow_dispatch:
+  schedule:
+    - cron: '35 16 * * *'
+
+jobs:
+  template_name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: template-name
+        uses: gendloop/template-name@main
+        with: 
+          token: ${{ secrets.GENDLOOP_ACCESS_TOKEN }}
+
+      
