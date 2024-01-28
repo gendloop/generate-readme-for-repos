@@ -2,4 +2,4 @@
 PROJECT_NAME=generate-readme-for-repos
 generate-readme-for-repos_VERSION_MAJOR=1
 generate-readme-for-repos_VERSION_MINOR=0
-generate-readme-for-repos_VERSION_PATCH=0
+generate-readme-for-repos_VERSION_PATCH=1
