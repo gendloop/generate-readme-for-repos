@@ -24,7 +24,7 @@ foreach ($item in $data) {
     $name = $item.name
     $description = $item.description
     Write-Host "${name}: ${description}"
-    $line_content = "| $count " + "| [![${name}](https://img.shields.io/v/release/${owner}/${name}?display_name=release&style=plastic&logo=github&label=${name}&labelColor=%23bf2b1f&color=blue)](https://github.com/${owner}/${name})" + "| ${description} |"
+    $line_content = "| $count " + "| [![${name}](https://img.shields.io/github/v/release/${owner}/${name}?display_name=release&style=plastic&logo=github&label=${name}&labelColor=%23bf2b1f&color=blue)](https://github.com/${owner}/${name})" + "| ${description} |"
 
     echo $line_content >> $file_out
     # echo "" >> $file_out
